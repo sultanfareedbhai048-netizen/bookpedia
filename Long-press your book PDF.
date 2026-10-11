@@ -1,0 +1,48 @@
+Build my complete Bookpedia website project for Sultan Fareed. I am a beginner using GitHub on an Android phone, so provide exact step-by-step instructions in simple Urdu.
+
+Create the actual code for every required file, not just a plan.
+
+TECHNOLOGY:
+
+- Frontend: HTML, CSS, and JavaScript
+- Free static hosting: GitHub Pages or Cloudflare Pages
+- Backend/database: Supabase free tier, with secure Row Level Security
+- Keep all source files in a GitHub repository so I own the backup.
+
+FEATURES:
+
+1. Urdu RTL layout, mobile-first responsive design.
+2. Elegant dark charcoal, cream, and muted gold theme.
+3. Author profile: Sultan Fareed, biography, and replaceable photo.
+4. Book library that can grow from one book to many books.
+5. Book details, PDF online reading, and PDF download.
+6. Ability to replace a book's PDF without changing its permanent page URL.
+7. Public 1–5 star ratings and written reader feedback stored in a real database.
+8. Average rating and total approved review count displayed publicly.
+9. All public reviews must be moderated. New reviews remain pending until an authenticated administrator approves them.
+10. Secure admin login and admin-only controls for editing books, changing colors, updating social links, uploading PDFs, and moderating reviews.
+11. Store large PDFs in an appropriate storage service; explain free-tier limits.
+12. Facebook Page, Facebook Profile, WhatsApp, TikTok, and YouTube review links.
+13. SEO metadata, canonical URLs, sitemap.xml, robots.txt, Open Graph tags, and valid structured data for the author and books.
+14. Google Search Console setup instructions.
+15. Explain how to use Screaming Frog SEO Spider to audit the website and monitor technical SEO issues. Do not promise guaranteed Google rankings.
+16. A complete backup procedure for source code, database schema, configuration, and book files. Never put secret keys in public files.
+17. Provide a README in Urdu with Android-specific GitHub instructions.
+18. Add a .gitignore file and keep private credentials out of GitHub.
+19. Include clear error messages and test instructions.
+20. Use free options wherever possible and identify any feature that may require payment.
+
+SECURITY:
+
+- Never put a Supabase service-role key in frontend code.
+- Use Supabase Auth for admin access.
+- Use Row Level Security to prevent visitors from approving or deleting reviews.
+- Validate review input and restrict upload permissions.
+- Do not pretend a feature is implemented if it is not.
+
+DELIVERY:
+First show the complete file tree. Then provide the full contents of each file, with its exact filename and instructions for creating it in GitHub on Android.
+Start with index.html, styles.css, and config.js, then provide the database SQL, authentication setup, storage setup, and admin files.
+After each stage, tell me exactly what to tap and wait for my confirmation before continuing.
+Do not replace real backend features with localStorage demos.
+Use Urdu for all instructions.
