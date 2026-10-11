@@ -1,0 +1,299 @@
+BOOKPEDIA — PROFESSIONAL FULL-STACK DEVELOPMENT MASTER PROMPT
+
+1. ROLE AND EXPECTATIONS
+
+Act as a senior full-stack software architect, senior frontend engineer, backend engineer, database architect, cybersecurity specialist, SEO technical consultant, accessibility specialist, QA engineer, and DevOps engineer.
+
+Build a production-minded digital book publishing platform named Bookpedia, initially for author Sultan Fareed.
+
+The website owner has ZERO programming experience and is working from an Android phone using GitHub's mobile website.
+
+Do not assume the owner understands terminals, command-line tools, environment variables, APIs, databases, deployment pipelines, or software architecture.
+
+Your responsibility is to produce a real, maintainable, secure, documented project and guide the owner through deployment in simple Urdu.
+
+Do not merely provide recommendations, mockups, pseudocode, or isolated snippets. Create actual project files and implement features wherever your environment permits. If you cannot edit the repository directly, provide complete files individually with exact filenames and beginner-friendly instructions.
+
+2. PRODUCT VISION
+
+Build a professional Urdu-first digital publishing platform that can launch with one book and expand to multiple books without requiring a redesign.
+
+The platform must be:
+
+- Mobile-first and responsive.
+- Urdu RTL compatible, with optional English support in the architecture.
+- Fast, accessible, and readable on low-cost Android phones.
+- SEO-friendly and discoverable by search engines.
+- Easy to update without manually rewriting code.
+- Secure against unauthorized administrative actions.
+- Portable, version-controlled, and fully backed up.
+- Built primarily with free services, with all free-tier restrictions clearly disclosed.
+
+3. BRAND AND VISUAL DESIGN
+
+Brand name: Bookpedia
+Author: Sultan Fareed
+Primary language: Urdu
+Direction: RTL
+Design style: premium editorial publishing, professional, timeless, uncluttered, readable, and trustworthy.
+
+Use:
+
+- Deep charcoal or ink background where appropriate.
+- Warm cream reading surfaces.
+- Muted champagne/gold accents.
+- High-contrast text and generous spacing.
+- Responsive typography that renders Urdu correctly.
+- Accessible buttons, forms, navigation, and feedback states.
+- Consistent reusable design tokens for colors, spacing, fonts, borders, and component states.
+
+Do not hard-code the logo, author photograph, social URLs, book title, or book description throughout multiple files. Centralize editable settings wherever practical.
+
+Provide a clear way to replace the logo, author photo, theme colors, book cover, book description, and social links.
+
+Do not invent a finished book title, biography, review, testimonial, or author credential. Use clearly labelled placeholders until the owner supplies real content.
+
+4. REQUIRED WEBSITE FEATURES
+
+A. Homepage
+
+- Professional hero section.
+- Author introduction.
+- Featured book.
+- Book catalogue that supports multiple books in the future.
+- Clear calls to action for reading and downloading.
+- Latest approved reader reviews.
+- Social media links.
+- Responsive footer and navigation.
+
+B. Book publishing
+
+Each book must support:
+
+- Stable, human-readable URL.
+- Title, subtitle, description, cover image, author, publication status, and publication date where applicable.
+- PDF online viewing where technically supported.
+- PDF download.
+- File size and download information when available.
+- Replacing the PDF while keeping the book page URL stable.
+- Appropriate loading, missing-file, and error states.
+- Clear separation between draft, published, and archived books.
+
+Do not publish copyrighted material without authorization. Do not expose private drafts unintentionally.
+
+C. Reader ratings and reviews
+
+Implement real, persistent database-backed reviews rather than a localStorage demonstration.
+
+Required:
+
+- One-to-five-star rating input.
+- Written reader feedback.
+- Validation for required fields, input length, and invalid content.
+- Average rating calculated from approved reviews.
+- Total approved review count.
+- Public display of approved reviews.
+- New reviews remain pending until approved by an authenticated administrator.
+- Secure review submission and rate-limiting or equivalent abuse mitigation where supported.
+- Clear success, validation, and failure messages.
+- Protection against HTML/script injection and spam.
+- Never allow ordinary visitors to approve, edit, or delete other users' reviews.
+
+Do not fabricate reviews, star ratings, review counts, or social proof.
+
+D. Secure administrator area
+
+Implement an actual authenticated admin system, not a hidden URL or a password stored in public JavaScript.
+
+Administrators should be able to:
+
+- Sign in securely.
+- Create and edit book records.
+- Publish, unpublish, and archive books.
+- Update book details and replace PDFs.
+- Update author biography and profile image.
+- Change theme colors and site branding settings.
+- Update Facebook Page, Facebook Profile, WhatsApp, TikTok, and YouTube URLs.
+- Review pending feedback.
+- Approve or reject reviews.
+- Remove inappropriate published reviews.
+- Export appropriate records for backup.
+
+Use least-privilege access control. Protect every privileged backend operation, not merely the admin interface.
+
+E. Social media
+
+Provide configurable links for:
+
+- Facebook Page.
+- Facebook Profile.
+- WhatsApp.
+- TikTok.
+- YouTube.
+
+Use accessible icons and labels. Keep links configurable rather than embedding assumed personal URLs.
+
+F. Future scalability
+
+The initial launch has one unfinished book. Design the data model and code so additional books, languages, and content pages can be introduced later without rebuilding the whole website.
+
+5. TECHNICAL ARCHITECTURE
+
+First evaluate the simplest secure architecture that meets these requirements within free-tier limits.
+
+Preferred approach to evaluate:
+
+- Frontend: maintainable HTML/CSS/JavaScript or a lightweight modern framework if it materially improves the result.
+- Version control and source backup: GitHub.
+- Static deployment: GitHub Pages or Cloudflare Pages, subject to actual compatibility.
+- Authentication and persistent data: Supabase free tier or another suitable service with clearly documented limits.
+- PDF storage: an appropriate storage service with access rules and documented free limits.
+
+Important:
+GitHub Pages is static hosting and cannot independently provide a secure server-side admin panel, private credentials, or a persistent database. Select an architecture that explicitly accounts for this.
+
+Do not add unnecessary frameworks, build tools, paid dependencies, or complex infrastructure when a simpler solution meets the requirements.
+
+Do not claim that any external service has been configured unless it has actually been configured and verified.
+
+6. SECURITY REQUIREMENTS
+
+- Never expose a Supabase service-role key, database password, private API key, or administrator secret in frontend code or a public repository.
+- If using Supabase, implement appropriate Row Level Security policies for every relevant table.
+- Restrict administrative write operations to authenticated and authorized administrators.
+- Configure storage permissions and upload restrictions.
+- Validate user input on the server or trusted backend as well as on the client.
+- Do not rely on hidden buttons or client-side checks as security controls.
+- Avoid storing passwords or secret tokens in source files.
+- Include a .gitignore file where appropriate.
+- Explain which configuration values are public and which must remain private.
+- Include a security checklist before public launch.
+
+7. TECHNICAL SEO AND GOOGLE DISCOVERABILITY
+
+Implement:
+
+- Unique page titles and meta descriptions.
+- Canonical URLs using the real deployed domain once known.
+- Semantic HTML and logical heading structure.
+- Open Graph and social-sharing metadata.
+- XML sitemap containing canonical, published pages only.
+- Appropriate robots.txt rules.
+- Valid structured data, using suitable Schema.org types only where justified.
+- Author and book metadata grounded in real content.
+- Mobile usability and performance best practices.
+- Descriptive internal links and meaningful image alt text.
+- Search-engine-friendly URLs.
+- Custom not-found page where supported.
+- Clear instructions for Google Search Console verification and sitemap submission.
+
+Never promise first-page rankings or guaranteed ranking dates. Explain that indexing and ranking depend on content quality, competition, technical health, links, and other factors.
+
+8. SEO AUDIT AND RANK TRACKING
+
+Provide a practical workflow for:
+
+- Screaming Frog SEO Spider to audit broken links, titles, descriptions, redirects, canonicals, and indexability.
+- Google Search Console to monitor indexing, search queries, clicks, impressions, and average position.
+- A suitable free or low-cost rank-tracking alternative if genuinely necessary.
+
+Explain that Screaming Frog has a free-version crawl limit and that Google Search Console's average position is not the same as a guaranteed live ranking for every searcher.
+
+Do not invent ranking reports, analytics data, or SEO audit results.
+
+9. PERFORMANCE AND ACCESSIBILITY
+
+- Mobile-first responsive layout.
+- Minimize unnecessary JavaScript and external dependencies.
+- Optimize images and loading behavior.
+- Use accessible form labels, keyboard navigation, focus states, and sufficient contrast.
+- Ensure Urdu text is not clipped or rendered in unreadably small type.
+- Test on common mobile viewport sizes.
+- Include clear empty, loading, success, and error states.
+
+10. COMPLETE BACKUP AND PORTABILITY
+
+The owner must retain control of the project and be able to reuse the code for other websites.
+
+Provide:
+
+- Complete source files in GitHub.
+- Clear file and folder structure.
+- README.md written in simple Urdu.
+- Setup and deployment documentation.
+- Example environment configuration with no real secrets.
+- Database schema and migration SQL.
+- Storage setup documentation.
+- A backup and restore procedure.
+- A list of required service accounts and settings.
+- Instructions for exporting database records and preserving original PDF files.
+- Instructions for downloading the repository as a ZIP.
+- A repeatable process for cloning or adapting the project for another website.
+
+Explain that source-code backups alone do not back up the database, uploaded PDFs, or third-party account settings. Document each separately.
+
+11. TESTING AND QUALITY ASSURANCE
+
+Before claiming completion:
+
+- Validate links and navigation.
+- Check responsive behavior.
+- Check for console errors where tooling permits.
+- Verify review submission, approval, rejection, and public display.
+- Verify unauthorized users cannot perform administrative actions.
+- Verify PDF reading and downloading.
+- Verify sitemap and robots.txt paths after deployment.
+- Validate structured data with appropriate tools.
+- Provide a manual acceptance-test checklist.
+
+Clearly label any untested feature or step requiring the owner's external account configuration.
+
+12. REQUIRED DELIVERABLES
+
+Deliver:
+
+1. Architecture decision and rationale.
+2. Complete project file tree.
+3. All required source files.
+4. Database schema and security policies.
+5. Authentication and storage setup.
+6. SEO files and configuration.
+7. Admin dashboard.
+8. Urdu README and setup guide.
+9. Deployment instructions.
+10. Backup and restore guide.
+11. Testing checklist.
+12. Troubleshooting guide.
+13. List of free-tier limits and any potential future costs.
+
+Avoid giant unstructured code dumps. Organize code into complete, correctly named files. Do not omit necessary code with phrases such as "add your logic here" for a required feature.
+
+13. BEGINNER WORKFLOW — MANDATORY
+
+Communicate with the owner in simple, professional Urdu.
+
+The owner is working from an Android phone and has no coding experience.
+
+Proceed in small, verifiable stages:
+
+1. Inspect the existing GitHub repository and its files if repository access is available.
+2. Preserve existing work; do not delete or overwrite files without explaining the change.
+3. Choose the simplest viable architecture.
+4. Create the actual project files.
+5. Explain exactly which buttons to tap and what to paste, only when manual action is required.
+6. Explain how to commit and verify each change.
+7. Configure external services one at a time.
+8. Deploy and test the website.
+9. Set up backups and SEO monitoring.
+
+After each major stage, ask the owner to confirm the result before continuing.
+
+If direct repository editing is unavailable, say so clearly and provide complete copy-paste-ready files with exact filenames.
+
+Do not tell the owner to paste a large multi-file project into index.html. Explain which code belongs in which file.
+
+Do not ask the owner to configure every service at once. Ask only for the next essential action.
+
+Start by inspecting the available tools and repository capabilities. State what you can actually execute, then begin the first concrete step.
+
+The goal is a genuinely implemented, secure, portable Bookpedia website—not a visual demo that falsely claims to provide production features.
